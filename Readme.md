@@ -1,7 +1,7 @@
 # Личный проект «Пинк» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Анастасия Захваткина](https://up.htmlacademy.ru/adaptive/13/user/490491).
-* Наставник: .
+* Наставник: []().
 
 ---
 
