@@ -1,3 +1,54 @@
-body {
-  background: red;
+.contacts {
+  padding: 20px 0 0 0;
+  text-align: center;
+
+  background-color: @main-background-color;
+}
+
+.contacts::after {
+  content: "";
+
+  display: block;
+
+  height: 200px;
+
+  background: url("../img/bg-map-mobile@1x.png") no-repeat left bottom;
+}
+
+.contacts__caption {
+  margin: 0;
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 300;
+  color: @main-font-color;
+}
+
+.contacts__title {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  color: @main-font-color;
+}
+
+.contacts__text {
+  display: inline-block;
+
+  padding: 0 20px 0 20px;
+
+
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 300;
+  color: @bright-font-color;
 }
