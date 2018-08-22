@@ -1,10 +1,14 @@
-.add-history {
-
+.add-history__wrap {
+  background: @dark-background-color url("../img/back-mobile@1x.jpg") no-repeat;
 }
 
 .add-history__caption {
-  margin: 0;
-  padding: 95px 20px 40px 20px;
+  width: 280px;
+
+  margin: 0 auto;
+  .indents-mobile();
+  padding-top: 95px;
+  padding-bottom: 40px;
 
   text-align: center;
 
@@ -12,13 +16,15 @@
   line-height: 30px;
   font-weight: 300;
   color: @secondary-font-color;
-
-  background: @dark-background-color url("../img/bg-back-mobile@1x.jpg") no-repeat;
 }
 
 .add-history__text {
-  margin: 0;
-  padding: 30px 20px 30px 20px;
+  width: 280px;
+
+  margin: 0 auto;
+  .indents-mobile();
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   text-align: center;
 
@@ -28,3 +34,45 @@
   color: @main-font-color;
 }
 
+.add-history__text-addition {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .add-history__caption {
+    width: 620px;
+
+    .indents-tablet();
+
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .add-history__text {
+    width: 565px;
+
+    .indents-tablet();
+
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .add-history__text-addition {
+    display: inline-block;
+  }
+
+}
+
+@media (min-width: @desktop-width) {
+  .add-history__caption {
+    width: 820px;
+
+    .indents-desktop();
+  }
+
+  .add-history__text {
+    width: 820px;
+
+    .indents-desktop();
+  }
+}

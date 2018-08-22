@@ -38,7 +38,7 @@
         </svg>
       </button>
     </div>
-    <nav class="main-nav visually-hidden">
+    <nav class="main-nav">
       <ul class="main-nav__list site-list">
         <li class="site-list__item">
           <a class="site-list__link" href="index.html">Главная</a>
@@ -59,8 +59,10 @@
   <main class="main">
 
     <section class="add-history">
-      <h1 class="add-history__caption">Конкурс на самое безбашенное путешествие с Пинк</h1>
-      <p class="add-history__text">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!</p>
+      <div class="add-history__wrap">
+        <h1 class="add-history__caption">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      </div>
+      <p class="add-history__text">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="add-history__text-addition"> Пожалуйста, заполните форму ниже:</span></p>
       <form class="history" action="https://echo.htmlacademy.ru" method="post">
         <div class="history__personal-data feedback">
           <label class="feedback__label" for="surname">Фамилия:</label>
@@ -71,7 +73,7 @@
           <input class="feedback__field" type="text" id="patronymic" name="patronymic" placeholder="Ну и отчество тоже">
         </div>
 
-        <fieldset class="history__achievements achievements">
+        <div class="history__achievements achievements">
           <p class="achievements__title">Ваши безбашенные достижения в путешествии</p>
           <ul class="achievements__list">
             <li class="achievements__item">
@@ -99,16 +101,17 @@
               <label class="achievements__label" for="hotel">Разгромил отель</label>
             </li>
           </ul>
-        </fieldset>
+        </div>
 
-        <div class="history__personal-data feedback">
+        <div class="history__personal-contacts feedback feedback--border">
+          <p class="feedback__title">Контактная информация</p>
           <label class="feedback__label" for="phone">Номер телефона</label>
           <input class="feedback__field" type="text" id="phone" name="phone" placeholder="Номер, пожалуйства">
           <label class="feedback__label" for="email">Адрес почты:</label>
           <input class="feedback__field" type="text" id="email" name="email" placeholder="Введите почту *">
         </div>
 
-        <fieldset class="history__application application">
+        <div class="history__application application">
           <p class="application__title">С каким приложением путешествовали?</p>
           <ul class="application__list">
             <li class="application__item">
@@ -124,17 +127,20 @@
               <label class="application__label" for="Windows">Windows Phone</label>
             </li>
           </ul>
-        </fieldset>
+        </div>
 
         <div class="history__emotions emotions">
           <p class="emotions__title">Опишите свои эмоции</p>
           <textarea class="emotions__comment" name="comment" id="comment" rows="7">Можно прям в красках, не стесняясь в выражениях</textarea>
         </div>
 
-        <button class="history__button button-submit" type="submit">Отправить форму</button>
-        <div class="history__comment-wraper">
-          <span class="history__footnote">*</span>
-          <span class="history__comment">- обязательные поля</span>
+        <div class="history__wrap">
+          <button class="history__button button-submit" type="submit">Отправить форму</button>
+          <div class="history__comment-wraper">
+            <span class="history__footnote">*</span>
+            <span class="history__comment">- обязательные поля</span>
+            <span class="history__comment-desktop">- обязательные для заполнения поля</span>
+          </div>
         </div>
       </form>
     </section>

@@ -1,23 +1,32 @@
+.history {
+  .indents-mobile();
+}
+
 .history__personal-data {
-  padding: 10px 20px 40px 20px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+
+  background-color: @main-background-color;
+}
+
+.history__personal-contacts {
+  padding-top: 10px;
+  padding-bottom: 40px;
 
   background-color: @main-background-color;
 }
 
 .history__achievements {
   background-color: @secondary-background-color;
-
-  border: none;
 }
 
 .history__application {
   background-color: @secondary-background-color;
-
-  border: none;
 }
 
 .history__emotions {
-  padding: 10px 20px 40px 20px;
+  padding-top: 10px;
+  padding-bottom: 40px;
 
   background-color: @main-background-color;
 }
@@ -38,10 +47,102 @@
   font-weight: 400;
   color: @bright-font-color;
 }
-.history__comment {
+.history__comment,
+.history__comment-desktop {
   font-size: 14px;
   line-height: 30px;
   font-weight: 400;
   text-transform: uppercase;
   color: @main-font-color;
+}
+
+.history__comment-desktop {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .history {
+    display: flex;
+    flex-direction: column;
+
+    .indents-tablet();
+  }
+
+  .history__personal-data {
+    order: 1;
+  }
+
+  .history__personal-contacts {
+    margin-bottom: 60px;
+
+    order: 3;
+  }
+
+  .history__achievements {
+    margin-bottom: 60px;
+
+    background-color: @main-background-color;
+
+    order: 4;
+  }
+
+  .history__application {
+    margin-bottom: 60px;
+
+    background-color: @main-background-color;
+
+    order: 2;
+  }
+
+  .history__emotions {
+    margin-bottom: 60px;
+
+    order: 5;
+  }
+
+  .history__wrap {
+    display: flex;
+    justify-content: space-between;
+
+    order: 6;
+  }
+
+  .history .history__button {
+    margin: 0;
+
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .history {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .indents-desktop();
+  }
+
+  .history__personal-contacts {
+    flex-basis: 100%;
+  }
+
+  .history__achievements {
+    flex-basis: 100%;
+  }
+
+  .history__emotions {
+    flex-basis: 100%;
+  }
+
+  .history__wrap {
+    flex-basis: 100%;
+  }
+
+  .history__comment {
+    display: none;
+  }
+
+  .history__comment-desktop {
+    display: inline;
+  }
 }

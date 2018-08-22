@@ -1,6 +1,5 @@
 .site-list {
-  margin: 0;
-  padding: 0;
+  .reset-indents();
   list-style: none;
 }
 
@@ -17,6 +16,29 @@
   box-sizing: border-box;
 
   min-height: 63px;
+
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: @secondary-background-color;
 }
+
+@media (min-width: @desktop-width) {
+  .site-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 642px;
+  }
+
+  .site-list__link {
+    font-weight: 400;
+    text-transform: none;
+  }
+
+}
+
 
 

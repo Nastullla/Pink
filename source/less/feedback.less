@@ -1,3 +1,18 @@
+.feedback__title {
+  display: none;
+
+  margin: 0 auto;
+  padding: 0 35px 0 35px;
+
+  text-align: center;
+
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: @bright-font-color;
+}
+
 .feedback__label {
   display: block;
 
@@ -17,4 +32,19 @@
   line-height: 30px;
   font-weight: 400;
   color: @main-font-color;
+}
+
+@media (min-width: @tablet-width) {
+  .feedback--border {
+     border: 2px solid #e5e5e5;
+  }
+
+  .feedback__title {
+    display: block;
+  }
+
+  .feedback__label {
+
+  }
+
 }
