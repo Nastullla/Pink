@@ -1,12 +1,32 @@
 .page-footer {
-  padding: 40px 20px 40px 20px;
+  .indents-mobile();
+  padding-top: 36px;
+  padding-bottom: 40px;
 
   text-align: center;
 
   background-color: @main-background-color;
+
+  &--hide {
+    display: none;
+  }
 }
 
 .page-footer__social {
   margin-top: 20px;
   margin-bottom: 25px;
+}
+
+@media (min-width: @tablet-width) {
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-footer {
+    .indents-desktop();
+
+  }
 }

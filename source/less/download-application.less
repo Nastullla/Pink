@@ -1,9 +1,9 @@
 .download-application {
-  padding: 0px 0 30px 0;
+  padding-bottom: 30px;
 
   text-align: center;
 
-  background-color: #1d2631;
+  background-color: @dark-background-color;
 }
 
 .download-application::before {
@@ -11,10 +11,21 @@
 
   display: block;
 
-  height: 462px;
+  height: 395px;
 
   background: url("../img/iphone-hand-mobile@1x.png") no-repeat left bottom,
-              url("../img/bg-back-mobile@1x.jpg") no-repeat ;
+              url("../img/back-mobile@1x.jpg") no-repeat left bottom,
+              @dark-background-color;
+}
+
+.download-application__wrapper {
+  .indents-mobile();
+}
+
+.download-application__caption {
+  display: none;
+
+  .reset-indents();
 }
 
 .download-application .download-application__button {
@@ -24,11 +35,68 @@
 .download-application__text {
   margin: 0 auto;
 
-  width: 280px;
-
   text-align: center;
   font-size: 14px;
   line-height: 24px;
   font-weight: 300;
   color: @secondary-font-color;
+}
+
+@media (min-width: @tablet-width) {
+  .download-application::before {
+    display: none;
+  }
+
+  .download-application {
+    height: 618px;
+
+    .indents-tablet();
+
+    background: url("../img/iphone-hand-tablet@1x.png") no-repeat left bottom,
+                url("../img/back-tablet@1x.jpg") no-repeat left bottom,
+                @dark-background-color;
+  }
+
+  .download-application__wrapper {
+    width: 300px;
+
+    .reset-indents();
+
+    padding-top: 75px;
+  }
+
+  .download-application__caption {
+    display: block;
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    color: @secondary-font-color;
+  }
+
+  .download-application__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .download-application {
+    height: 743px;
+
+    .indents-desktop();
+
+    background: url("../img/iphone-hand-desktop@1x.png") no-repeat 200px bottom,
+                url("../img/back-desktop.jpg") no-repeat left bottom,
+                @dark-background-color;
+  }
+
+  .download-application__caption {
+    font-size: 50px;
+    line-height: 50px;
+  }
 }
