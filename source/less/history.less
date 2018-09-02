@@ -1,42 +1,43 @@
 .history {
-  .indents-mobile();
+
 }
 
 .history__personal-data {
-  padding-top: 10px;
-  padding-bottom: 40px;
+  .indents-mobile();
 
   background-color: @main-background-color;
 }
 
 .history__personal-contacts {
-  padding-top: 10px;
-  padding-bottom: 40px;
+  .indents-mobile();
 
   background-color: @main-background-color;
 }
 
 .history__achievements {
+  .indents-mobile();
+
   background-color: @secondary-background-color;
 }
 
 .history__application {
+  .indents-mobile();
+
   background-color: @secondary-background-color;
 }
 
 .history__emotions {
-  padding-top: 10px;
-  padding-bottom: 40px;
-
   background-color: @main-background-color;
 }
 
 .history .history__button {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .history__comment-wraper {
   display: block;
+
+  margin-bottom: 15px;
 
   text-align: center;
 }
@@ -59,13 +60,11 @@
 .history__comment-desktop {
   display: none;
 }
-
+//////////////////////////////////////////////////////////////////////////
 @media (min-width: @tablet-width) {
   .history {
     display: flex;
     flex-direction: column;
-
-    .indents-tablet();
   }
 
   .history__personal-data {
@@ -73,13 +72,17 @@
   }
 
   .history__personal-contacts {
-    margin-bottom: 60px;
+    margin-bottom: 65px;
+    margin-left: 20px;
+    margin-right: 20px;
 
     order: 3;
   }
 
   .history__achievements {
-    margin-bottom: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 65px;
 
     background-color: @main-background-color;
 
@@ -87,7 +90,9 @@
   }
 
   .history__application {
-    margin-bottom: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 65px;
 
     background-color: @main-background-color;
 
@@ -95,7 +100,9 @@
   }
 
   .history__emotions {
-    margin-bottom: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 66px;
 
     order: 5;
   }
@@ -104,15 +111,20 @@
     display: flex;
     justify-content: space-between;
 
+    .indents-tablet();
+    margin-bottom: 51px;
     order: 6;
   }
 
   .history .history__button {
     margin: 0;
+  }
 
+  .history__comment-wraper {
+    margin-top: 18px;
   }
 }
-
+//////////////////////////////////////////////////////////////////////////////////
 @media (min-width: @desktop-width) {
   .history {
     flex-direction: row;
@@ -122,20 +134,41 @@
     .indents-desktop();
   }
 
+  .history__personal-data {
+    padding: 0;
+  }
+
   .history__personal-contacts {
     flex-basis: 100%;
+
+    margin: 0;
+    margin-bottom: 65px;
+  }
+
+  .history__application {
+    margin: 0;
+    margin-bottom: 64px;
   }
 
   .history__achievements {
     flex-basis: 100%;
+
+    margin: 0;
+    margin-bottom: 65px;
   }
 
   .history__emotions {
     flex-basis: 100%;
+
+    margin: 0;
+    margin-bottom: 65px;
   }
 
   .history__wrap {
     flex-basis: 100%;
+
+    padding: 0;
+    margin-bottom: 0px;
   }
 
   .history__comment {

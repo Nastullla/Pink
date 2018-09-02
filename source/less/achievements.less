@@ -1,11 +1,12 @@
 .achievements {
-  padding: 20px 0 20px 0;
+  padding-top: 38px;
+  padding-bottom: 25px;
 }
 
 .achievements__title {
   margin: 0 auto;
-  padding: 0 35px 0 35px;
 
+  width: 250px;
   text-align: center;
 
   font-size: 14px;
@@ -18,23 +19,166 @@
 .achievements__list {
   margin: 0;
   padding: 0;
+  padding-top: 28px;
+  padding-bottom: 7px;
 
   list-style: none;
 }
 
 .achievements__item {
-  margin-bottom: 25px;
+  margin-bottom: 22px;
+  padding-left: 69px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .achievements__label {
+  position: relative;
+
+  font: inherit;
   font-size: 18px;
   line-height: 30px;
   font-weight: 400;
   color: @main-font-color;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -7px;
+    left: -69px;
+
+    display: block;
+
+    box-sizing: border-box;
+
+    width: 39px;
+    height: 39px;
+
+    background-color: #ffffff;
+
+    border: 2px solid #e5e5e5;
+    border-radius: 1px;
+  }
+
+  &:hover {
+    &::before {
+      border-color: @dark-background-color;
+    }
+  }
+
+  &:active {
+    &::before {
+      border-color: #d22856;
+    }
+  }
 }
 
+.achievements__checkbox:checked + .achievements__label::before {
+  background: #ffffff url("../img/check.png") no-repeat center center;
+  background-size: 22px;
+}
+
+.achievements__checkbox:checked + .achievements__label:active::before {
+  background-image: none;
+}
+
+.achievements__checkbox:not(:checked) + .achievements__label:active::before {
+  background: #ffffff url("../img/check.png") no-repeat center center;
+}
+//////////////////////////////////////////////////////////////////////////
 @media (min-width: @tablet-width) {
   .achievements {
+    position: relative;
+
     border: 2px solid #e5e5e5;
+    border-radius: 1px;
+  }
+
+  .achievements__title {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+
+    width: max-content;
+
+    margin: 0;
+    padding-left: 33px;
+    padding-right: 33px;
+
+    background-color: @main-background-color;
+
+    transform: translateX(-50%);
+  }
+
+  .achievements__list {
+    padding-top: 3px;
+    padding-bottom: 13px;
+  }
+
+  .achievements__item {
+    padding-left: 97px;
+
+  }
+
+  .achievements__label {
+    &::before {
+      left: -59px;
+    }
+  }
+}
+//////////////////////////////////////////////////////////////////////////
+@media (min-width: @tablet-width) {
+  .achievements {
+    padding-left: 57px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+  }
+
+  .achievements__list {
+    display: flex;
+    // justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .achievements__item {
+    box-sizing: border-box;
+
+    width: 260px;
+    padding-left: 60px;
+
+    &:nth-child(1) {
+      order: 0;
+      margin-right: 55px;
+    }
+
+    &:nth-child(2) {
+      order: 3;
+      margin-right: 55px;
+    }
+
+    &:nth-child(3) {
+      order: 1;
+      margin-right: 35px;
+    }
+
+    &:nth-child(4) {
+      order: 4;
+      margin-right: 35px;
+    }
+
+    &:nth-child(5) {
+      order: 2;
+    }
+
+    &:nth-child(6) {
+      order: 5;
+    }
+
+
   }
 }

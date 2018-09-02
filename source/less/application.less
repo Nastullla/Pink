@@ -1,5 +1,6 @@
 .application {
-  padding: 20px 0 20px 0;
+  padding-top: 38px;
+  padding-bottom: 25px;
 }
 
 .application__title {
@@ -16,25 +17,141 @@
 }
 
 .application__list {
-  margin: 0;
-  padding: 0;
+  .reset-indents();
+  padding-top: 29px;
+  padding-bottom: 12px;
 
   list-style: none;
 }
 
 .application__item {
   margin-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 69px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .application__label {
+  font: inherit;
   font-size: 18px;
   line-height: 30px;
   font-weight: 400;
   color: @main-font-color;
 }
 
+.application__label {
+  position: relative;
+
+  font: inherit;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  color: @main-font-color;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -7px;
+    left: -69px;
+
+    display: block;
+
+    box-sizing: border-box;
+
+    width: 39px;
+    height: 39px;
+
+    background-color: #ffffff;
+
+    border: 2px solid #e5e5e5;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    &::before {
+      border-color: @dark-background-color;
+    }
+  }
+
+  &:active {
+    &::before {
+      border-color: #d22856;
+    }
+  }
+}
+
+.application__radio:checked + .application__label::before {
+  background: #ffffff url("../img/circle.png") no-repeat center center;
+}
+
+.application__radio:checked + .application__label:active::before {
+  background-image: none;
+}
+
+.application__radio:not(:checked) + .application__label:active::before {
+  background: #ffffff url("../img/circle.png") no-repeat center center;
+}
+//////////////////////////////////////////////////////////////////////////
 @media (min-width: @tablet-width) {
   .application {
+    position: relative;
+
     border: 2px solid #e5e5e5;
+    border-radius: 1px;
+  }
+
+  .application__title {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+
+    width: max-content;
+
+    margin: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+
+
+    background-color: @main-background-color;
+
+    transform: translateX(-50%);
+  }
+
+  .application__list {
+    padding-top: 8px;
+    padding-bottom: 24px;
+  }
+
+  .application__item {
+    padding-left: 97px;
+
+  }
+
+  .application__label {
+    &::before {
+      left: -59px;
+    }
+  }
+}
+///////////////////////////////////////////////////////////////////////////
+@media (min-width: @desktop-width) {
+  .application {
+    box-sizing: border-box;;
+
+    width: 435px;
+  }
+
+  .application__list {
+    padding-top: 11px;
+  }
+
+  .application__item {
+    padding-left: 113px;
+
   }
 }
