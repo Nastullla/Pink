@@ -4,10 +4,10 @@
   box-sizing: border-box;
 
   width: 280px;
-  height: 59px;
+  min-height: 63px;
 
   margin: 0 auto;
-  padding-top: 5px;
+  padding-top: 4px;
 
   text-align: center;
 
@@ -20,6 +20,25 @@
   background-color: #2aab6d;
 
   border-width: 0;
+  border-radius: 2px;
 
   cursor: pointer;
+
+  &:hover {
+    background-color: #1c9b5e;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:disabled {
+    background-color: #e5e5e5;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .button-submit {
+    width: 300px;
+  }
 }

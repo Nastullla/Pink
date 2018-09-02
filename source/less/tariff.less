@@ -1,17 +1,53 @@
 .tariff {
   overflow: hidden;
 
+  padding-top: 91px;
+
   background-color: @secondary-background-color;
+  background-image: url("../img/bg-triangle-white.svg");
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 
 .tariff__table {
   width: 836px;
-
   margin-left: 50%;
+  margin-bottom: 35px;
 
   transform: translateX(-50%);
 
   border-collapse: collapse;
+}
+
+.tariff__hit {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0px;
+    left: -1px;
+
+    width: 74px;
+    height: 73px;
+
+    background: url("../img/bg-hit.svg");
+  }
+}
+
+.tariff__title {
+  position: absolute;
+  top: 12px;
+  left: 8px;
+
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: @secondary-font-color;
+
+  transform: rotate(-45deg);
 }
 
 .tariff__table td {
@@ -22,17 +58,26 @@
   border: 2px solid #e5e5e5;
 }
 
-.tariff__table th:not(:first-child)  {
-  background-color: @dark-background-color;
-}
+.tariff__table th {
+  padding-top: 16px;
+  padding-bottom: 18px;
 
-.tariff__table th:nth-child(3)  {
-  border-left: 2px solid #e5e5e5;
-  border-right: 2px solid #e5e5e5;
+  &:not(:first-child)  {
+    background-color: @dark-background-color;
+    border-bottom: 2px solid @dark-background-color;
+  }
+
+  &:nth-child(3)  {
+    border-left: 2px solid #e5e5e5;
+    border-right: 2px solid #e5e5e5;
+  }
 }
 
 .tariff__name {
   display: block;
+
+  .reset-indents();
+  margin-bottom: 2px;
 
   font-size: 18px;
   line-height: 30px;
@@ -42,10 +87,23 @@
 }
 
 .tariff__price {
+  .reset-indents();
+
   font-size: 24px;
   line-height: 30px;
   font-weight: 300;
   color: @secondary-font-color;
+}
+
+.tariff__feature-availability {
+  padding: 15px 17px 14px 22px;
+}
+
+.tariff__feature-availability p {
+  display: flex;
+  justify-content: space-between;
+
+  .reset-indents();
 }
 
 .tariff__feature-name {
@@ -60,41 +118,104 @@
   color: @main-font-color;
 }
 
+.tariff__availability {
+  width: 31px;
+}
+
+.tariff__availability--yes {
+  height: 25px;
+  margin-top: 5px;
+
+  background: url("../img/icon-yes.svg") no-repeat;
+  background-size: 31px auto;
+}
+
+.tariff__availability--no {
+  height: 26px;
+  margin-top: 2px;
+
+  background: url("../img/icon-no.svg") no-repeat;
+
+}
+
 .tariff__toggles {
   margin: 0 auto;
+  margin-bottom: 40px;
 
   text-align: center;
 }
-
+/////////////////////////////////////////////////////////////////////////////
 @media (min-width: @tablet-width) {
   .tariff {
     .indents-tablet();
+    padding-top: 88px;
 
     width: auto;
   }
 
   .tariff__table {
+    table-layout: fixed;
+
     width: auto;
 
     margin: 0 auto;
+    margin-bottom: 68px;
 
     transform: translateX(0);
+
+    & th {
+      width: 152px;
+      padding-top: 12px;
+      padding-bottom: 8px;
+    }
+
+    & td {
+      width: 152px;
+    }
   }
 
   .tariff__feature-name {
-    display: table;
+    display: table-cell;
+
+    box-sizing: border-box;
+
+    padding: 5px 5px 10px 16px;
   }
 
-  .tariff__table td {
-    width: 153px;
+  .tariff__hit {
+    &::before {
+      left: -1px;
+
+      width: 61px;
+      height: 61px;
+
+      background: url("../img/bg-hit-tablet.svg");
+    }
+  }
+
+  .tariff__title {
+    top: 4px;
+    left: 5px;
   }
 
   .tariff__name {
+    margin-bottom: -3px;
+
     font-size: 16px;
   }
 
   .tariff__price {
     font-size: 18px;
+  }
+
+  .tariff__feature-availability {
+    box-sizing: border-box;
+
+    padding: 8px 0px 7px 0px;
+  }
+
+  .tariff__feature-availability p {
+    justify-content: center;
   }
 
   .tariff__feature-name {
@@ -112,14 +233,29 @@
     display: none;
   }
 }
-
+///////////////////////////////////////////////////////////////////////////
 
 @media (min-width: @desktop-width) {
-  .tariff__table td {
-    width: 233px;
+  .tariff {
+    .indents-desktop();
+    padding-top: 149px;
+    padding-bottom: 27px;
+  }
+
+  .tariff__table {
+    th {
+      width: 235px;
+      padding-top: 16px;
+      padding-bottom: 18px;
+    }
+    td {
+    width: 235px;
+    }
   }
 
   .tariff__name {
+    margin-bottom: 2px;
+
     font-size: 18px;
   }
 
@@ -128,6 +264,9 @@
   }
 
   .tariff__feature-name {
+    padding-top: 14px;
+    padding-left: 21px;
+    padding-bottom: 15px;
     font-size: 18px;
   }
 }

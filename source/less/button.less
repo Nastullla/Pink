@@ -4,10 +4,10 @@
   box-sizing: border-box;
 
   margin: 0 auto;
-  padding-top: 14px;
 
   width: 280px;
-  height: 55px;
+  min-height: 55px;
+  padding-top: 0;
 
   text-align: center;
 
@@ -23,25 +23,46 @@
 }
 
 .button--download {
+  padding-top: 13px;
+
   color: @secondary-font-color;
 
   border-color: @secondary-font-color;
+
+  &:hover {
+    color: @bright-font-color;
+
+    background-color: @main-background-color;
+
+    border-color: @main-background-color;
+  }
+
+  &:active {
+    color: rgba(210, 40, 86, 0.3);
+  }
 }
 
 .button--post {
-  margin-bottom: 12px;
-  padding-top: 0;
-
   color: @bright-font-color;
 
   background-color: @secondary-background-color;
 
   border-color: @bright-font-color;
+
+  &:hover {
+    color: @secondary-font-color;
+
+    background-color: @bright-font-color;
+
+    border-color: @bright-font-color;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
 }
 
 .button--cancel {
-  padding-top: 0px;
-
   color: @main-font-color;
 
   background-color: @secondary-background-color;
@@ -49,4 +70,45 @@
   border-color: @main-font-color;
 
   opacity: 0.1;
+
+  &:hover {
+    color: @main-font-color;
+
+    background-color: @secondary-background-color;
+
+    border-color: @dark-background-color;
+
+    opacity: 0.3;
+  }
+
+  &:active {
+    color: @secondary-font-color;
+
+    background-color: @dark-background-color;
+
+    border-color: @dark-background-color;
+
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .button {
+    width: 260px;
+  }
+
+  .button--download {
+    width: 300px;
+  }
+}
+
+
+@media (min-width: @desktop-width) {
+  .button {
+    width: 183px;
+  }
+
+  .button--download {
+    width: 300px;
+  }
 }

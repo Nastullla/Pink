@@ -1,0 +1,48 @@
+.slider__toggles {
+  font-size: 0;
+}
+
+.slider__toggle {
+  display: inline-block;
+
+  box-sizing: content-box;
+
+  width: 6px;
+  height: 6px;
+  .reset-indents();
+  margin: 6px;
+
+  font-size: 14px;
+
+  background-color: #bec2c7;
+
+  border: 3px solid @main-background-color;
+  border-radius: 50%;
+
+  outline: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #7e868f;
+  }
+
+  &:active {
+    background-color: #e9ebec;
+  }
+}
+
+.slider__toggle--dark {
+  background-color: #b5b9be;
+
+  border: 3px solid @secondary-background-color;
+}
+
+.slider__toggle--active {
+  background-color: #ffffff;
+
+  background-color: @main-background-color;
+
+  border: 3px solid #364351;
+}
+

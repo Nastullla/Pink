@@ -2,7 +2,7 @@
   margin: 0 auto;
   .indents-mobile();
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 42px;
 
   text-align: center;
 
@@ -15,38 +15,271 @@
 .upload__form {
   .indents-mobile();
   padding-top: 20px;
-  padding-bottom: 41px;
+  padding-bottom: 29px;
 
   background-color: @secondary-background-color;
 }
 
 .upload__picture {
-  width: 100%;
-  height: auto;
+  // width: 100%;
+  // height: auto;
 }
 
+.upload__list {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 212px;
+  .reset-indents();
+  margin: 0 auto;
+  padding-top: 37px;
+  padding-bottom: 70px;
+
+  list-style: none;
+}
+
+.upload__icon {
+  box-sizing: border-box;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  border: none;
+
+
+
+  cursor: pointer;
+
+  &--crop {
+    background-image: url("../img/icon-editor-crop.svg");
+    &:active {
+      background-image: url("../img/icon-editor-crop-hover.svg");
+    }
+  }
+
+  &--fill {
+    background-image: url("../img/icon-editor-fill.svg");
+    &:active {
+      background-image: url("../img/icon-editor-fill-hover.svg");
+    }
+  }
+
+  &--contrast {
+    height: 46px;
+    background-image: url("../img/icon-editor-contrast.svg");
+
+    transform: translateX(-3px);
+    &:active {
+      background-image: url("../img/icon-editor-contrast-hover.svg");
+    }
+  }
+}
+
+.upload__icon--crop.upload__icon--active {
+  background-image: url("../img/icon-editor-crop-active.svg");
+}
+
+.upload__icon--fill.upload__icon--active {
+  background-image: url("../img/icon-editor-fill-active.svg");
+}
+
+.upload__icon--contrast.upload__icon--active {
+  background-image3: url("../img/icon-editor-contrast-active.svg");
+}
+
+.upload__range-controls {
+  display: none;
+}
+
+.upload__icon--active + .upload__range-controls {
+  position: absolute;
+  bottom: 24px;
+  left: -16px;
+
+  display: block;
+
+  width: 240px;
+  height: 20px;
+}
+
+.upload__bar {
+  width: 240px;
+  height: 2px;
+  margin-top: 8px;
+
+  background-color: @dark-background-color;
+}
+
+.upload__range-toggle {
+  position: absolute;
+  top: 2px;
+  left: 80%;
+
+  box-sizing: border-box;
+
+  width: 14px;
+  height: 14px;
+
+  background-color: @secondary-background-color;
+
+  border: 2px solid #d22856;
+  border-radius: 50%;
+
+  transform: translateX(-50%);
+
+  cursor: pointer;
+
+  &:active {
+    background-color: #d22856;
+  }
+}
+
+.upload__delimiter {
+  width: 100vw;
+  height: 1px;
+  margin-left: ~"calc(-50vw + 50%)";
+  margin-bottom: 38px;
+
+  background-color: #dddfe0;
+}
+
+.upload__button {
+  margin-bottom: 12px;
+}
+////////////////////////////////////////////////////////////////////////
 @media (min-width: @tablet-width) {
   .upload__text {
     .indents-tablet();
+    padding-top: 45px;
+    padding-bottom: 69px;
 
     font-size: 18px;
     line-height: 30px;
   }
 
   .upload__form {
-    .indents-tablet();
     display: flex;
+
+    padding-top: 57px;
+    padding-bottom: 30px;
+    .indents-tablet();
   }
 
   .upload__picture {
+    flex-shrink: 0 ;
+
     width: 300px;
     height: 400px;
-    margin-right: 20px;
+    margin-right: 47px;
+  }
+
+  .upload__list {
+    display: block;
+
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 64px;
+  }
+
+  .upload__item {
+    display: flex;
+
+    padding-top: 25px;
+    padding-bottom: 23px;
+    padding-right: 18px;
+
+    border-bottom: 1px solid #dddfe0;
+
+    &:first-child {
+      padding-top: 8px;
+    }
+  }
+
+  .upload__icon {
+    flex-shrink: 0;
+
+    width: 24px;
+    height: 24px;
+    margin-right: 29px;
+
+    outline: none;
+
+    pointer-events: none;
+  }
+
+  .upload__icon--crop.upload__icon--active,
+  .upload__icon--crop {
+    background: url("../img/icon-editor-crop-active.svg") no-repeat center center;
+    background-size: 22px;
+  }
+
+  .upload__icon--fill {
+    background: url("../img/icon-editor-fill-active.svg") no-repeat center center;
+    background-size: 24px;
+  }
+
+  .upload__icon--contrast {
+    background: url("../img/icon-editor-contrast-active.svg") no-repeat center center;
+    background-size: 16px;
+
+    transform: translateX(2px);
+    transform: translateY(-2px);
+  }
+
+  .upload__item .upload__range-controls {
+    position: relative;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 20px;
+  }
+
+  .upload__bar {
+    width: 100%;
+  }
+
+  .upload__range-toggle--crop {
+    left: 76%;
+  }
+
+  .upload__range-toggle--fill {
+    left: 16%;
+  }
+
+  .upload__range-toggle--contrast {
+    left: 51%;
+  }
+
+  .upload__delimiter {
+    display: none;
+  }
+
+  .upload__button {
+    margin-left: 0px;
+    margin-bottom: 24px;
   }
 }
-
-
+////////////////////////////////////////////////////////////////////////
 @media (min-width: @desktop-width) {
+  .upload__text {
+    .indents-tablet();
+    padding-top: 39px;
+    padding-bottom: 66px;
+
+    font-size: 18px;
+    line-height: 30px;
+  }
+
   .upload__form {
     .reset-indents();
     margin-right: 130px;
@@ -55,6 +288,71 @@
   }
 
   .upload__picture {
-    margin-right: 90px;
+    margin-right: 89px;
+  }
+
+  .upload__wrap {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .upload__list {
+    margin-top: -10px;
+  }
+
+  .upload__item {
+    padding-top: 15px;
+    padding-bottom: 9px;
+    padding-right: 30px;
+  }
+
+  .upload__icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 45px;
+  }
+
+  .upload__icon--crop.upload__icon--active,
+  .upload__icon--crop {
+    background-size: 44px;
+  }
+
+  .upload__icon--fill {
+    background-size: 48px;
+  }
+
+  .upload__icon--contrast {
+    background-size: 32px;
+
+    transform: translateX(2px);
+    transform: translateY(-2px);
+  }
+
+  .upload__range-controls {
+    margin-top: 11px;
+  }
+
+  .upload__range-toggle--crop {
+    left: 27%;
+  }
+
+  .upload__range-toggle--fill {
+    left: 88%;
+  }
+
+  .upload__range-toggle--contrast {
+    left: 58%;
+  }
+
+  .upload__wrap-button {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: auto;
+  }
+
+  .upload__button {
+    margin: 0;
   }
 }
